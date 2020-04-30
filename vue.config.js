@@ -1,4 +1,5 @@
 const path = require('path')
+
 /*
 *  vue.config.js 是一个可选的配置文件，如果项目中的（和package.json同级的）根目录中存在这个文
 * 件，那么它会被@vue/cli-service自动加载。你也可以使用package.json中的vue字段，但是注意这种写法
@@ -22,21 +23,35 @@ module.exports = {
   productionSourceMap: false,
   /* 默认情况下，生成的静态资源在它们的文件名中包含了 hash 以便更好的控制缓存，你可以通过将这个选项设为 false 来关闭文件名哈希。(false的时候就是让原来的文件名不改变) */
   filenameHashing: true,
+  /* 代码保存时进行eslint检测 */
+  lintOnSave: process.env.NODE_ENV !== 'production',
+  /* 是否使用编译器 default: false */
+  runtimeCompiler: false,
+  /* 默认babel-loader会忽略node_modules中的文件，你想显示的话在这个选项中列出来 */
+  // transpileDependencies: [],
+  /* 设置生成的 HTML 中 <link rel="stylesheet"> 和 <script> 标签的 crossorigin 属性。需要注意的是该选项仅影响由 html-webpack-plugin 在构建时注入的标签 - 直接写在模版 (public/index.html) 中的标签不受影响 */
+  // crossorigin: "",
+  /* 在生成的 HTML 中的 <link rel="stylesheet"> 和 <script> 标签上启用 Subresource Integrity (SRI)。如果你构建后的文件是部署在 CDN 上的，启用该选项可以提供额外的安全性。需要注意的是该选项仅影响由 html-webpack-plugin 在构建时注入的标签 - 直接写在模版 (public/index.html) 中的标签不受影响。另外，当启用 SRI 时，preload resource hints 会被禁用，因为 Chrome 的一个 bug 会导致文件被下载两次 */
+  integrity: false,
   /* webpack 相关配置 */
-  configureWebpack: {
-    resolve: {
+  configureWebpack: config => {
+    config.resolve = {
       extensions: ['.js', '.vue', '.json', '.css'],
       alias: {
         //  别名地址修改
         'vue$': 'vue/dist/vue.esm.js',
         '@': resolve('src')
       }
-    },
-    // 插件配置
+    }
     // webpack-load配置
-    module: {
+    config.module = {
       rules: [
-        { test: /\.vue$/, use: [{ loader: 'iview-loader', options: { prefix: false } }] }
+        // { test: /\.vue/, loader: 'vue-loader' },
+        { test: /\.vue$/, use: [{ loader: 'vue-loader', options: {} }, { loader: 'iview-loader', options: { prefix: false } }] },
+        { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+        { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
+        { test: /\.svg$/, include: [resolve('src/icons/svg')], use: [{ loader: 'svg-sprite-loader', options: { symbolId: 'icon-[name]', esModule: false } }] },
+        { test: /\.(gif|jpe?g|png|woff|svg|eot|ttf)\??.*$/, exclude: [resolve('src/icons/svg')], use: [{ loader: 'url-loader', options: { limit: 10000,/*小于limit限制的图片将转为base64嵌入引用位置*/name: 'img/[name].[hash:7].[ext]', esModule: false } }] }
       ]
     }
   },
