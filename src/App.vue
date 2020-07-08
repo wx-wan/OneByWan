@@ -11,10 +11,12 @@ export default {
 </script>
 <style>
   #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
-    margin-top: 60px;
+    font-family: 'Work Sans', sans-serif;
+    background: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    color: #263a5b;
+    line-height: 22px;
+    overflow-x: hidden;
   }
 </style>

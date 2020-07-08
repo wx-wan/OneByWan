@@ -2,20 +2,20 @@
   <div id="container">
     <div id="inner">
       <div>
-        <img alt class="inner-plant-2" src="../../../assets/png/plant2.png">
-        <img alt class="inner-web" src="../../../assets/png/web.png">
-        <img alt class="inner-plant-1" src="../../../assets/png/plant.png">
-        <img alt class="inner-nod" src="../../../assets/png/nod.png">
-        <img alt class="inner-nod-1" src="../../../assets/png/nod1.png">
+        <img alt class="inner-plant-2" src="../../../assets/images/png/plant2.png">
+        <img alt class="inner-web" src="../../../assets/images/png/web.png">
+        <img alt class="inner-plant-1" src="../../../assets/images/png/plant.png">
+        <img alt class="inner-nod" src="../../../assets/images/png/nod.png">
+        <img alt class="inner-nod-1" src="../../../assets/images/png/nod1.png">
       </div>
       <div>
-        <img alt class="inner-cloud-1" src="../../../assets/png/cloud1.png">
-        <img alt class="inner-cloud-2" src="../../../assets/png/cloud.png">
+        <img alt class="inner-cloud-1" src="../../../assets/images/png/cloud1.png">
+        <img alt class="inner-cloud-2" src="../../../assets/images/png/cloud.png">
       </div>
       <div>
-        <img alt class="inner-windows-1" src="../../../assets/png/windows1.png">
-        <img alt class="inner-windows-2" src="../../../assets/png/windows2.png">
-        <img alt class="inner-windows-3" src="../../../assets/png/windows3.png">
+        <img alt class="inner-windows-1" src="../../../assets/images/png/windows1.png">
+        <img alt class="inner-windows-2" src="../../../assets/images/png/windows2.png">
+        <img alt class="inner-windows-3" src="../../../assets/images/png/windows3.png">
       </div>
     </div>
   </div>

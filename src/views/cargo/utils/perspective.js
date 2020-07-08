@@ -25,6 +25,7 @@ const perspective = function () {
 
   const onMouseEnterHandler = (event) => {update(event, inner)}
   const onMouseLeaveHandler = () => {
+    // cubic-bezier称为三次贝塞尔曲线，主要是生成速度曲线的函数，规定是cubic-bezier(<x1>,<y1>,<x2>,<y2>)
     let childStyle = `transition: all 300ms cubic-bezier(0.03, 0.98, 0.52, 0.99) 0s; transform: matrix(1, 0, 0, 1,0, 0)`
     inner.style = `transform: perspective(700px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`
     inner.children[1].style = childStyle

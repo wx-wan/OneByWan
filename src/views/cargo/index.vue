@@ -1,5 +1,6 @@
 <template>
   <div id="cargo">
+    <div id="firstMap"></div>
     <jumbotron></jumbotron>
     <svg-icon icon-class="shamen"></svg-icon>
   </div>
@@ -9,7 +10,9 @@ import Jumbotron from '@/views/cargo/jumbotron/jumbotron'
 
 export default {
   name: 'cargoHomePage',
-  components: { Jumbotron }
+  components: { Jumbotron },
+  mounted () {
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -25,5 +28,9 @@ export default {
 
     /*margin: 0;*/
     /*background-color: rgb(220, 220, 220);*/
+  }
+
+  #firstMap {
+    height: 180px;
   }
 </style>

@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 
 /*
 *  vue.config.js 是一个可选的配置文件，如果项目中的（和package.json同级的）根目录中存在这个文
@@ -40,7 +41,8 @@ module.exports = {
       alias: {
         //  别名地址修改
         'vue$': 'vue/dist/vue.esm.js',
-        '@': resolve('src')
+        '@': resolve('src'),
+        'jquery': 'jquery/src/jquery'
       }
     }
     // webpack-load配置
@@ -52,8 +54,23 @@ module.exports = {
         { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
         { test: /\.svg$/, include: [resolve('src/icons/svg')], use: [{ loader: 'svg-sprite-loader', options: { symbolId: 'icon-[name]', esModule: false } }] },
         { test: /\.(gif|jpe?g|png|woff|svg|eot|ttf)\??.*$/, exclude: [resolve('src/icons/svg')], use: [{ loader: 'url-loader', options: { limit: 10000,/*小于limit限制的图片将转为base64嵌入引用位置*/name: 'img/[name].[hash:7].[ext]', esModule: false } }] }
-      ]
+      ],
     }
+    // config.plugins = [
+    //   new webpack.ProvidePlugin({
+    //     $: "jquery",
+    //     jQuery: "jquery",
+    //     "windows.jQuery": "jquery"
+    //   })
+    // ]
+  },
+  chainWebpack: config => {
+    config
+      .plugin('html')
+      .tap(args => {
+        args[0].title = 'One by Wan'
+        return args
+      })
   },
   /* webpack-dev-server 相关配置 */
   devServer: {
