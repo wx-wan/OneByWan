@@ -34,7 +34,7 @@
             <div class="menu-box shadow">
               <ul class="list-inline mb-0">
                 <li class="list-inline-item active">
-                  <a href="index.html">Preview</a>
+                  <a @click="toPath('/admin')">Preview</a>
                 </li>
                 <li class="list-inline-item">
                   <a href="documentation.html">Documentation</a>
@@ -75,7 +75,7 @@
                   </div>
                   <div class="col-6">
                     <div class="item-demo-preview-link float-right">
-                      <a class="btn btn-primary-rgba" href="./html/light-vertical/index.html">Preview<i class="el-icon-right ri-1x ml-2"></i></a>
+                      <a class="btn btn-primary-rgba" href="./html/light-vertical/index.html">Preview<i class="ri-arrow-right-line ri-1x ml-2"></i></a>
                     </div>
                   </div>
                 </div>
@@ -96,7 +96,7 @@
                   </div>
                   <div class="col-6">
                     <div class="item-demo-preview-link float-right">
-                      <a class="btn btn-primary-rgba" href="./html/light-vertical/dashboard-ecommerce.html">Preview<i class="el-icon-right ml-2"></i></a>
+                      <a class="btn btn-primary-rgba" href="./html/light-vertical/dashboard-ecommerce.html">Preview<i class="ri-arrow-right-line ml-2"></i></a>
                     </div>
                   </div>
                 </div>
@@ -117,7 +117,7 @@
                   </div>
                   <div class="col-6">
                     <div class="item-demo-preview-link float-right">
-                      <a class="btn btn-primary-rgba" href="#">Preview<i class="el-icon-right ml-2"></i></a>
+                      <a class="btn btn-primary-rgba" href="#">Preview<i class="ri-arrow-right-line ml-2"></i></a>
                     </div>
                   </div>
                 </div>
@@ -150,7 +150,7 @@
                   </div>
                   <div class="col-6 col-md-5 col-lg-4">
                     <div class="item-demo-preview-link float-right">
-                      <a class="btn btn-primary-rgba" href="./html/light-vertical/index.html">Preview<i class="el-icon-right ml-2"></i></a>
+                      <a class="btn btn-primary-rgba" href="./html/light-vertical/index.html">Preview<i class="ri-arrow-right-line ml-2"></i></a>
                     </div>
                   </div>
                 </div>
@@ -171,7 +171,7 @@
                   </div>
                   <div class="col-6 col-md-5 col-lg-4">
                     <div class="item-demo-preview-link float-right">
-                      <a class="btn btn-primary-rgba" href="./html/light-horizontal/index.html">Preview<i class="el-icon-right ml-2"></i></a>
+                      <a class="btn btn-primary-rgba" href="./html/light-horizontal/index.html">Preview<i class="ri-arrow-right-line ml-2"></i></a>
                     </div>
                   </div>
                 </div>
@@ -192,7 +192,7 @@
                   </div>
                   <div class="col-6 col-md-5 col-lg-4">
                     <div class="item-demo-preview-link float-right">
-                      <a class="btn btn-primary-rgba" href="./html/semi-dark-vertical/index.html">Preview<i class="el-icon-right ml-2"></i></a>
+                      <a class="btn btn-primary-rgba" href="./html/semi-dark-vertical/index.html">Preview<i class="ri-arrow-right-line ml-2"></i></a>
                     </div>
                   </div>
                 </div>
@@ -218,7 +218,7 @@
           <div class="col-lg-3">
             <div class="feature-box text-center">
               <div class="feature-head">
-                <i class="el-icon-brush"></i>
+                <i class="ri-palette-line"></i>
               </div>
               <div class="feature-body">
                 <h5 class="feature-title">75+ New Widgets</h5>
@@ -228,7 +228,7 @@
           <div class="col-lg-3">
             <div class="feature-box text-center">
               <div class="feature-head">
-                <i class="el-icon-edit"></i>
+                <i class="ri-code-s-slash-line"></i>
               </div>
               <div class="feature-body">
                 <h5 class="feature-title">W3C Validated</h5>
@@ -238,7 +238,7 @@
           <div class="col-lg-3">
             <div class="feature-box text-center">
               <div class="feature-head">
-                <i class="el-icon-wind-power"/>
+                <i class="ri-service-line"/>
               </div>
               <div class="feature-body">
                 <h5 class="feature-title">10+ Icon Sets</h5>
@@ -250,7 +250,7 @@
           <div class="col-lg-3">
             <div class="feature-box text-center">
               <div class="feature-head">
-                <i class="el-icon-monitor"></i>
+                <i class="ri-computer-line"></i>
               </div>
               <div class="feature-body">
                 <h5 class="feature-title">Ultralight Design</h5>
@@ -260,7 +260,7 @@
           <div class="col-lg-3">
             <div class="feature-box text-center">
               <div class="feature-head">
-                <i class="el-icon-tickets"></i>
+                <i class="ri-pages-line"></i>
               </div>
               <div class="feature-body">
                 <h5 class="feature-title">100+ Pages</h5>
@@ -270,7 +270,7 @@
           <div class="col-lg-3">
             <div class="feature-box text-center">
               <div class="feature-head">
-                <i class="el-icon-document-copy"></i>
+                <i class="ri-file-copy-2-line"></i>
               </div>
               <div class="feature-body">
                 <h5 class="feature-title">Form Validation</h5>
@@ -282,7 +282,7 @@
           <div class="col-lg-3">
             <div class="feature-box text-center">
               <div class="feature-head">
-                <i class="el-icon-box"></i>
+                <i class="ri-dashboard-line"></i>
               </div>
               <div class="feature-body">
                 <h5 class="feature-title">New Dashboards</h5>
@@ -292,7 +292,7 @@
           <div class="col-lg-3">
             <div class="feature-box text-center">
               <div class="feature-head">
-                <i class="el-icon-ship"></i>
+                <i class="ri-command-line"></i>
               </div>
               <div class="feature-body">
                 <h5 class="feature-title">Sass Supported</h5>
@@ -302,7 +302,7 @@
           <div class="col-lg-3">
             <div class="feature-box text-center">
               <div class="feature-head">
-                <i class="el-icon-service"></i>
+                <i class="ri-customer-service-2-line"></i>
               </div>
               <div class="feature-body">
                 <h5 class="feature-title">Quick Support</h5>
@@ -352,7 +352,7 @@
                   </div>
                   <div class="col-6">
                     <div class="item-demo-preview-link float-right">
-                      <a class="btn btn-primary-rgba" href="./html/light-vertical/apps-email-inbox.html">Visit<i class="el-icon-right ml-2"></i></a>
+                      <a class="btn btn-primary-rgba" href="./html/light-vertical/apps-email-inbox.html">Visit<i class="ri-arrow-right-line ml-2"></i></a>
                     </div>
                   </div>
                 </div>
@@ -373,7 +373,7 @@
                   </div>
                   <div class="col-6">
                     <div class="item-demo-preview-link float-right">
-                      <a class="btn btn-primary-rgba" href="./html/light-vertical/user-register.html">Visit<i class="el-icon-right ml-2"></i></a>
+                      <a class="btn btn-primary-rgba" href="./html/light-vertical/user-register.html">Visit<i class="ri-arrow-right-line ml-2"></i></a>
                     </div>
                   </div>
                 </div>
@@ -394,7 +394,7 @@
                   </div>
                   <div class="col-6">
                     <div class="item-demo-preview-link float-right">
-                      <a class="btn btn-primary-rgba" href="./html/light-vertical/apps-calender.html">Visit<i class="el-icon-right ml-2"></i></a>
+                      <a class="btn btn-primary-rgba" href="./html/light-vertical/apps-calender.html">Visit<i class="ri-arrow-right-line ml-2"></i></a>
                     </div>
                   </div>
                 </div>
@@ -415,7 +415,7 @@
                   </div>
                   <div class="col-6">
                     <div class="item-demo-preview-link float-right">
-                      <a class="btn btn-primary-rgba" href="./html/light-vertical/apps-kanban-board.html">Visit<i class="el-icon-right ml-2"></i></a>
+                      <a class="btn btn-primary-rgba" href="./html/light-vertical/apps-kanban-board.html">Visit<i class="ri-arrow-right-line ml-2"></i></a>
                     </div>
                   </div>
                 </div>
@@ -466,10 +466,19 @@
 </template>
 <script>
 export default {
-  name: 'Home'
+  name: 'Home',
+  methods: {
+    toPath (path) {
+      this.$router.push(path)
+    }
+  }
 }
 </script>
 <style lang="scss">
+  h2, h3, h4, h5 {
+    font-weight: 600;
+  }
+
   .btn-primary-rgba {
     background-color: rgba(4, 66, 186, 0.1);
     border: none;
@@ -484,6 +493,10 @@ export default {
     &:focus {
       box-shadow: none;
     }
+  }
+
+  .btn {
+    display: flex;
   }
 
   .btn.focus, .btn:focus {
@@ -508,6 +521,7 @@ export default {
     .item-demo-name {
       h5 {
         color: #282828;
+        font-weight: 600;
       }
     }
   }
@@ -524,6 +538,10 @@ export default {
       background-color: #0442ba;
       color: #fff !important;
       transform: scale(1.1);
+
+      .feature-title {
+        color: #fff !important;
+      }
 
       .feature-head {
         i {

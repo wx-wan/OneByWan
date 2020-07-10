@@ -1,5 +1,4 @@
 const path = require('path')
-const webpack = require('webpack')
 
 /*
 *  vue.config.js 是一个可选的配置文件，如果项目中的（和package.json同级的）根目录中存在这个文
@@ -68,7 +67,7 @@ module.exports = {
     config
       .plugin('html')
       .tap(args => {
-        args[0].title = 'One by Wan'
+        args[0].title = 'One by Wan 实验室——兴趣轮子'
         return args
       })
   },

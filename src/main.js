@@ -21,6 +21,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap'
 // 加载自定义字体
 import '@/assets/css/stylesheet.css'
+// remixicon.com图标库
+import 'remixicon/fonts/remixicon.css'
 
 Vue.use(Vuex)
 Vue.use(ViewUI)
