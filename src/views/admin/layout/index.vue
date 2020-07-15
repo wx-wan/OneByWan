@@ -1,24 +1,16 @@
 <template>
   <el-container class="containerBar">
-    <el-aside class="leftBar" width="250px">
+    <el-aside :width="aside_width" class="leftBar">
       <div class="logoBar">
         <img alt="logo" class="img-fluid main-logo" src="../../../assets/images/svg/one.svg">
       </div>
-      <div class="navigationBar">
+      <div :class="{'navigationBar':true,'isCollapse':isCollapse}">
         <Navigation></Navigation>
       </div>
     </el-aside>
     <el-container class="rightBar">
-      <el-header class="topBar">
-        <el-dropdown>
-          <i class="el-icon-setting" style="margin-right: 15px"></i>
-          <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>查看</el-dropdown-item>
-            <el-dropdown-item>新增</el-dropdown-item>
-            <el-dropdown-item>删除</el-dropdown-item>
-          </el-dropdown-menu>
-        </el-dropdown>
-        <span>王小虎</span>
+      <el-header class="topBar" ref="topBar">
+        <Menubar @_isCollapse="_isCollapse"></Menubar>
       </el-header>
       <el-main>
         <div class="breadcrumbBar"></div>
@@ -39,18 +31,29 @@
 </template>
 <script>
 import Navigation from '@/views/admin/layout/navigation'
+import Menubar from '@/views/admin/layout/menubar'
 
 export default {
   name: 'ContainerBar',
-  components: { Navigation },
+  components: { Menubar, Navigation },
   data () {
-    const item = {
-      date: '2016-05-02',
-      name: '王小虎',
-      address: '上海市普陀区金沙江路 1518 弄'
-    }
     return {
-      tableData: Array(20).fill(item)
+      isCollapse: false,
+      aside_width: '250px'
+    }
+  },
+  methods: {
+    _isCollapse (val) {
+      let close = '80px'
+      let open = '250px'
+      this.isCollapse = val
+      if (this.isCollapse) {
+        this.aside_width = close
+        $('.topBar').css('left', close)
+      } else {
+        this.aside_width = open
+        $('.topBar').css('left', open)
+      }
     }
   }
 }
@@ -96,19 +99,41 @@ export default {
     background: #ffffff;
     border-right: 1px solid rgba(0, 0, 0, 0.05);
     z-index: 9;
-    /*transition: all 0.3s ease;*/
+    transition: all 0.3s ease;
+
     .logoBar {
-      padding: 15px 0;
+      height: 75px;
+      padding: 15px 5px;
       margin-bottom: 30px;
       text-align: center;
       border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
     }
 
+
     .navigationBar {
       height: calc(100vh - 105px);
       overflow: auto;
       /*transition: 0.5s;*/
+      &.isCollapse {
+        /deep/ .el-menu {
+          border-right: none;
+
+          .el-menu-item-group__title {
+            display: none;
+          }
+
+          .el-submenu__title {
+            span, .el-submenu__icon-arrow {
+              display: none;
+            }
+          }
+
+          .noItem .el-submenu__title:before {
+            display: none;
+          }
+        }
+      }
 
       /deep/ .el-menu {
         border-right: none;
@@ -157,6 +182,14 @@ export default {
             margin: 0 15px;
             border-radius: 3px;
             font-size: 15px;
+
+            * {
+              vertical-align: auto;
+            }
+
+            i {
+              color: #464c59;
+            }
 
             & > i:first-child {
               display: inline-block;
@@ -233,6 +266,24 @@ export default {
           border-bottom: none;
         }
       }
+    }
+  }
+
+  .rightBar {
+    margin-left: 25px;
+    overflow: hidden;
+    min-height: 500px;
+    transition: all 0.3s ease;
+
+    .topBar {
+      background-color: #ffffff;
+      height: 75px !important;
+      padding: 15px 30px;
+      position: fixed;
+      z-index: 1;
+      right: 0;
+      left: 250px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
   }
 </style>
