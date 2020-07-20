@@ -15,14 +15,6 @@
       <el-main>
         <div class="breadcrumbBar"></div>
         <div class="contentBar">
-          <!--          <el-table :data="tableData">-->
-          <!--            <el-table-column label="日期" prop="date" width="140">-->
-          <!--            </el-table-column>-->
-          <!--            <el-table-column label="姓名" prop="name" width="120">-->
-          <!--            </el-table-column>-->
-          <!--            <el-table-column label="地址" prop="address">-->
-          <!--            </el-table-column>-->
-          <!--          </el-table>-->
         </div>
         <div class="footerBar"></div>
       </el-main>
@@ -44,27 +36,22 @@ export default {
   },
   methods: {
     _isCollapse (val) {
-      let close = '80px'
-      let open = '250px'
       this.isCollapse = val
-      if (this.isCollapse) {
-        this.aside_width = close
-        $('.topBar').css('left', close)
-      } else {
-        this.aside_width = open
-        $('.topBar').css('left', open)
-      }
+      let whatWidth = val ? '80px' : '250px'
+      this.aside_width = whatWidth
+      $('.topBar').css('left', whatWidth)
     }
   }
 }
 </script>
+<style lang="scss"></style>
 <style lang="scss" scoped>
   * {
     box-sizing: border-box;
 
     &::-webkit-scrollbar {
       /*滚动条整体样式*/
-      width: 0px; /*高宽分别对应横竖滚动条的尺寸*/
+      width: 0; /*高宽分别对应横竖滚动条的尺寸*/
       height: 1px;
     }
 
@@ -132,6 +119,10 @@ export default {
           .noItem .el-submenu__title:before {
             display: none;
           }
+
+          .el-menu--inline {
+            display: none;
+          }
         }
       }
 
@@ -156,7 +147,7 @@ export default {
 
             &:before {
               content: "";
-              font-family: "remixicon" !important;
+              font-family: "remixicon", sans-serif !important;
               font-size: 5px;
               line-height: 10px;
               padding-right: 5px;

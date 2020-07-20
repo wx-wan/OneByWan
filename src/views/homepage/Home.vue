@@ -19,7 +19,8 @@
         <div class="row justify-content-center text-center">
           <div class="col-lg-10">
             <div class="py-5">
-              <h2 class="mb-4">Olian - Bootstrap Minimal &amp; Clean Admin Template</h2>
+              <h2 class="mb-4">实验室建设中</h2>
+              <h2 class="mb-4">Bootstrap Minimal &amp; Clean Admin Template</h2>
               <p class="mb-5">The perfect combination of Design &amp; Development for your next project</p>
               <img alt="powered_by" class="img-fluid" src="../../assets/images/jpg/powered_by.png">
             </div>
@@ -56,7 +57,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-8 text-center">
             <h3 class="mb-3">Demos</h3>
-            <p class="mb-5">Olian comes with over 2 Pre-Built Dashboard and so much more.<br>Take a look at it's unique features.
+            <p class="mb-5">comes with over 2 Pre-Built Dashboard and so much more.<br>Take a look at it's unique features.
             </p>
           </div>
         </div>
@@ -211,7 +212,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <h3 class="mb-3">Key Features</h3>
-            <p class="mb-5">Why should you choose Olian?</p>
+            <p class="mb-5">Why should you choose?</p>
           </div>
         </div>
         <div class="row justify-content-center">
@@ -456,7 +457,7 @@
           </div>
           <div class="row justify-content-center">
             <div class="col-lg-12">
-              <p class="mb-0 text-center">© 2020 Olian - All Rights Reserved.</p>
+              <p class="mb-0 text-center">© 2020 实验室</p>
             </div>
           </div>
         </footer>

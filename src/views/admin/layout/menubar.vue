@@ -1,10 +1,20 @@
 <template>
-  <div class="menubar">
-    <el-button :icon="menu_hamburger_icon" @click="changeMenu()" class="menu-hamburger"></el-button>
-    <el-input class="searchBar" clearable placeholder="Search" v-model="searchKey">
-      <i class="ri-search-line" slot="suffix"></i>
-    </el-input>
-  </div>
+  <el-row class="menubar">
+    <el-col :span="12">
+      <el-button :icon="menu_hamburger_icon" @click="changeMenuFlag()" class="menu-hamburger"></el-button>
+      <el-input class="searchBar" clearable placeholder="Search" v-model="searchKey">
+        <i class="ri-search-line" slot="suffix"></i>
+      </el-input>
+    </el-col>
+    <el-col :span="12">
+      <div class="float-right">
+        <a class="infoBar">
+          <el-avatar :size="30" shape="circle" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
+          <span class="live-icon">Joe Wan</span>
+        </a>
+      </div>
+    </el-col>
+  </el-row>
 </template>
 <script>
 export default {
@@ -17,7 +27,7 @@ export default {
     }
   },
   methods: {
-    changeMenu () {
+    changeMenuFlag () {
       this.menu_change_flag = !this.menu_change_flag
       this.menu_hamburger_icon = this.menu_change_flag ? 'ri-menu-2-line menu-hamburger-collapse' : 'ri-close-line menu-hamburger-close'
       this.$emit('_isCollapse', this.menu_change_flag)
@@ -26,9 +36,16 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+  * {
+    a:hover {
+      background-color: rgba(172, 172, 180, 0.1);
+    }
+  }
+
   .menubar {
-    display: flex;
-    align-items: center;
+    /deep/ .el-col:first-child {
+      display: flex;
+    }
 
     .menu-hamburger {
       border: none;
@@ -98,6 +115,19 @@ export default {
         border-left: 0;
         box-shadow: none;
       }
+    }
+
+    .infoBar {
+      display: flex;
+      align-items: flex-end;
+      color: #151d2e;
+      padding: 5px 10px;
+      border-radius: 3px;
+    }
+
+    .live-icon {
+      margin-left: 5px;
+      font-size: 14px;
     }
 
   }
