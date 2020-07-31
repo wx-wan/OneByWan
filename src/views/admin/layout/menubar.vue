@@ -1,6 +1,9 @@
 <template>
   <el-row class="menubar">
     <el-col :span="12">
+      <div class="logoBar">
+        <img alt="logo" class="img-fluid main-logo" src="../../../assets/images/svg/one.svg">
+      </div>
       <el-button :icon="menu_hamburger_icon" @click="changeMenuFlag()" class="menu-hamburger"></el-button>
       <el-input class="searchBar" clearable placeholder="Search" v-model="searchKey">
         <i class="ri-search-line" slot="suffix"></i>
@@ -9,7 +12,7 @@
     <el-col :span="12">
       <div class="float-right">
         <a class="infoBar">
-          <el-avatar :size="30" shape="circle" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
+          <el-avatar :size="30" :src="avatarPath" shape="circle"></el-avatar>
           <span class="live-icon">Joe Wan</span>
         </a>
       </div>
@@ -22,6 +25,7 @@ export default {
   data () {
     return {
       searchKey: '',
+      avatarPath: require('../../../assets/images/jpg/avatar.jpg'),
       menu_change_flag: false,
       menu_hamburger_icon: 'ri-menu-2-line menu-hamburger-collapse'
     }
@@ -45,6 +49,10 @@ export default {
   .menubar {
     /deep/ .el-col:first-child {
       display: flex;
+    }
+
+    .logoBar {
+      display: none;
     }
 
     .menu-hamburger {
@@ -128,6 +136,12 @@ export default {
     .live-icon {
       margin-left: 5px;
       font-size: 14px;
+    }
+
+    @media (max-width: 767px) {
+      .live-icon {
+        display: none;
+      }
     }
 
   }

@@ -44,9 +44,9 @@ export default {
   }
 
   #inner {
-    width: 890px;
-    height: 465px;
-    margin: 30px auto;
+    width: 49.444rem;
+    height: 25.833rem;
+    margin: 1.667rem auto;
     position: relative;
     transition: all 300ms;
     /*position: relative;*/
@@ -61,62 +61,99 @@ export default {
     }
 
     .inner-web {
-      height: 385px;
-      top: 35px;
-      left: 110px;
+      height: 21.389rem;
+      top: 1.944rem;
+      left: 6.111rem;
     }
 
     .inner-plant-2 {
-      left: 60px;
-      top: 200px;
+      left: 3.333rem;
+      top: 11.111rem;
     }
 
     .inner-plant-1 {
       bottom: 0;
-      left: 30px;
-      height: 185px;
+      left: 1.667rem;
+      height: 10.278rem;
     }
 
     .inner-nod {
       bottom: 0;
-      right: 180px;
-      height: 140px;
+      right: 10rem;
+      height: 7.778rem;
     }
 
     .inner-nod-1 {
       bottom: 0;
-      right: 10px;
-      height: 68px;
+      right: 0.556rem;
+      height: 3.778rem;
     }
 
     .inner-cloud-2 {
       right: 0;
       top: 0;
-      height: 55px;
+      height: 3.056rem;
     }
 
     .inner-cloud-1 {
       left: 0;
-      top: 50px;
-      height: 55px;
+      top: 2.778rem;
+      height: 3.056rem;
     }
 
     .inner-windows-2 {
-      left: 94px;
-      height: 90px;
-      top: 220px;
+      left: 5.222rem;
+      height: 5rem;
+      top: 12.222rem;
     }
 
     .inner-windows-1 {
-      right: 73px;
-      top: 60px;
-      height: 124px
+      right: 4.056rem;
+      top: 3.333rem;
+      height: 6.889rem
     }
 
     .inner-windows-3 {
-      right: 42px;
-      top: 200px;
-      height: 120px;
+      right: 2.333rem;
+      top: 11.111rem;
+      height: 6.667rem;
+    }
+  }
+
+  @media (max-width: 49.833rem) {
+    #inner {
+      width: calc(49.444rem * 50%);
+      height: calc(25.833rem * 50%);
+    }
+    .inner-plant-2 {
+      transform: scale(0.5, 0.5) translate(350px, -150px);
+    }
+
+    .inner-plant-1 {
+      transform: scale(0.5, 0.5) translate(350px, -150px);
+    }
+
+    .inner-nod {
+      transform: scale(0.5, 0.5) translate(-300px, -150px);
+    }
+
+    .inner-nod-1 {
+      transform: scale(0.5, 0.5) translate(-400px, -200px);
+    }
+    .inner-cloud-1 {
+      transform: scale(0.5, 0.5) translate(420px, 0px);
+    }
+    .inner-windows-2 {
+      transform: scale(0.5, 0.5) translate(240px, 0px);
+    }
+
+    .inner-windows-1, .inner-windows-3, .inner-cloud-2 {
+      transform: scale(0.5, 0.5) translate(-400px, 0px);
+    }
+
+    img {
+      transform: scale(0.5, 0.5);
+      transition: 0.3s all ease-in;
     }
   }
 </style>

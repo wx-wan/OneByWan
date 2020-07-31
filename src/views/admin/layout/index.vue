@@ -10,13 +10,16 @@
     </el-aside>
     <el-container class="rightBar">
       <el-header class="topBar" ref="topBar">
-        <Menubar @_isCollapse="_isCollapse"></Menubar>
+        <Menubar @_isCollapse="collapse"></Menubar>
       </el-header>
-      <el-main>
+      <el-main class="mainBar">
         <div class="breadcrumbBar"></div>
         <div class="contentBar">
+            <jumbotron></jumbotron>
         </div>
-        <div class="footerBar"></div>
+        <div class="footerBar">
+          <div>2020©实验室-精彩稍后</div>
+        </div>
       </el-main>
     </el-container>
   </el-container>
@@ -24,10 +27,11 @@
 <script>
 import Navigation from '@/views/admin/layout/navigation'
 import Menubar from '@/views/admin/layout/menubar'
+import Jumbotron from '@/views/cargo/jumbotron/jumbotron'
 
 export default {
   name: 'ContainerBar',
-  components: { Menubar, Navigation },
+  components: { Jumbotron, Menubar, Navigation },
   data () {
     return {
       isCollapse: false,
@@ -35,11 +39,11 @@ export default {
     }
   },
   methods: {
-    _isCollapse (val) {
+    collapse (val) {
       this.isCollapse = val
       let whatWidth = val ? '80px' : '250px'
       this.aside_width = whatWidth
-      $('.topBar').css('left', whatWidth)
+      $('.rightBar').css('margin-left', whatWidth)
     }
   }
 }
@@ -94,7 +98,6 @@ export default {
       margin-bottom: 30px;
       text-align: center;
       border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-
     }
 
 
@@ -261,20 +264,57 @@ export default {
   }
 
   .rightBar {
-    margin-left: 25px;
+    margin-left: 250px;
     overflow: hidden;
     min-height: 500px;
+    min-width: 320px;
     transition: all 0.3s ease;
 
     .topBar {
+      width: 100%;
       background-color: #ffffff;
       height: 75px !important;
       padding: 15px 30px;
-      position: fixed;
-      z-index: 1;
-      right: 0;
-      left: 250px;
       border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  .mainBar {
+    overflow: hidden;
+
+    .contentBar {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footerBar {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .leftBar {
+      display: none;
+    }
+
+    .rightBar {
+      margin-left: 0 !important;
+
+      /deep/ .menu-hamburger, /deep/ .searchBar {
+        display: none;
+      }
+
+      /deep/ .logoBar {
+        display: block;
+      }
     }
   }
 </style>
